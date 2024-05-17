@@ -1,7 +1,5 @@
 package com.ggn.probs.algo.dp;
 
-import java.util.Arrays;
-
 public class OptimalBinarySearchTree {
 
 	public void optimalBinarySearchTreeAlgo(int[] keys, int[] p, int[] q, int n) {
