@@ -1,6 +1,5 @@
 package com.ggn.probs.algo.dp;
 
-import com.ggn.probs.algo.greedy.Kanpsack;
 
 //o-1
 public class Knapsack {
