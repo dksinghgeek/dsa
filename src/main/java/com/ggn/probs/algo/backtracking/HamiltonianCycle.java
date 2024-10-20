@@ -46,7 +46,7 @@ public class HamiltonianCycle {
 			System.out.print(path[i] + " ");
 		}
 		
-		System.out.println(path[0] + " ");
+		//System.out.println(path[0] + " ");
 	}
 	
 	public static void main(String[] args) {
