@@ -7,10 +7,10 @@ public class Kanpsack_0_1 {
 	private static int UPPER = Integer.MAX_VALUE;
 
 	public static void kanpsack(int[][] costs, int W) {
-		List<Node> queue = new ArrayList<>();
+		List<Item> queue = new ArrayList<>();
 
 		for (int i = 0; i < costs[0].length; i++) {
-			Node node = new Node(i);
+			Item node = new Item(i);
 			node.profit = costs[0][i];
 			node.weight = costs[1][i];
 			
@@ -30,13 +30,13 @@ public class Kanpsack_0_1 {
 		}
 		
 		while(!queue.isEmpty()) {
-			Node previousNode = queue.remove(0);
+			Item previousNode = queue.remove(0);
 			
 			if(previousNode.upper > UPPER)
 				continue;
 			
 			for(int i = previousNode.nodeId + 1 ; i < costs[0].length; i++) {
-				Node node = new Node(i);
+				Item node = new Item(i);
 				node.profit = costs[0][i];
 				node.weight = costs[1][i];
 				
@@ -67,7 +67,7 @@ public class Kanpsack_0_1 {
 		}
 	}
 
-	private static int calNSetUpper(int[][] costs, int W, int index, Node previousNode) {
+	private static int calNSetUpper(int[][] costs, int W, int index, Item previousNode) {
 		int p = 0;
 		
 		while(previousNode != null) {
@@ -88,7 +88,7 @@ public class Kanpsack_0_1 {
 		return p;
 	}
 
-	private static double calNSetCost(int[][] costs, int W, int index, Node previousNode) {
+	private static double calNSetCost(int[][] costs, int W, int index, Item previousNode) {
 		double c = 0.0;
 		
 		while(previousNode != null) {
@@ -125,16 +125,16 @@ public class Kanpsack_0_1 {
 
 }
 
-class Node {
+class Item {
 	int nodeId;
 	int profit;
 	int weight;
-	Node parent;
-	Node child;
+	Item parent;
+	Item child;
 	double cost;
 	int upper;
 
-	public Node(int nodeId) {
+	public Item(int nodeId) {
 		this.nodeId = nodeId;
 	}
 }

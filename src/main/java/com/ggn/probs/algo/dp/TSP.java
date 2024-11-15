@@ -40,6 +40,8 @@ public class TSP {
 		
 		TSP op = new TSP();
 		System.out.println(op.tsp(1, 0));
+		
+		System.out.println(1<<0);
 	}
 
 }
