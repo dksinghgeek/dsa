@@ -285,11 +285,82 @@ public class LinearLinkedlistOperations {
 		return t;
 	}
 	
+	public Node reverseBetween(Node head, int left, int right) {
+        if(left < 1 && right > length(head)){
+            return null;
+        }
+
+        if(left <= right){
+            if(left == right){
+                return head;
+            }
+
+            if(length(head) == 2){
+            	Node t = head;
+            	Node s = head.next;
+                s.next = t;
+                t.next = null;
+                head = s;
+                return head;
+            }
+
+            //a next should be mapped to reversed LL
+            Node a = null;
+            Node b = head;
+
+            for(int pos = 0; pos < left - 1; pos++){
+                a = b;
+                b = b.next;
+            }
+            //b is starting of LL;
+
+            Node c = head;
+            for(int pos = 0; pos < right - 1; pos++){
+               c = c.next;
+            }
+            Node d = c.next;
+
+            //Reverse LL;
+            Node r = null; Node q = null; Node p = b;
+            if(right == length(head)){
+               while(p != null){
+                    r = q;
+                    q = p;
+                    p = p.next;
+                    q.next = r;
+                } 
+            } else{
+                while(p != d){
+                    r = q;
+                    q = p;
+                    p = p.next;
+                    q.next = r;
+                }
+            }
+            
+
+            if(left == 1){
+                head = q;
+                b.next = d;
+            } else{
+                b.next = d;
+                a.next = q;
+            }
+        }
+
+        return head;
+    }
+	
 	public static void main(String[] args) {
 		LinearLinkedlistOperations op = new LinearLinkedlistOperations();
-		int[] keys = {5,4,3,2,1};
+		int[] keys = {-2,-1,-2,-2,0,-4,-2,4};
 		op.create(keys);
-//		op.display(op.head);
+		op.display(op.head);
+		
+		System.out.println();
+		
+		op.reverseBetween(op.head, 2, 5);
+		op.display(op.head);
 //		System.out.println();
 //		System.out.println("rSearch : " + op.rsearch(op.head, 4).data);
 //		
@@ -320,8 +391,8 @@ public class LinearLinkedlistOperations {
 //		op.display(op.head);
 		
 //		
-		System.out.println("Middle : " + op.middle(op.head).data);
-		System.out.println("Middle : " + op.middleStack(op.head).data);
+//		System.out.println("Middle : " + op.middle(op.head).data);
+//		System.out.println("Middle : " + op.middleStack(op.head).data);
 	}
 
 }

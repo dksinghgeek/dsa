@@ -1,5 +1,7 @@
 package com.ggn.probs.dsa.ds.bst;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 public class BSTProblems {
@@ -96,9 +98,60 @@ public class BSTProblems {
 			}
 		}
 	}
+	
+	public boolean isIdentical(Node n1, Node n2) {
+		if(n1 == null && n2 == null) {
+			return true;
+		}
+		
+		if(n1 == null || n2 == null) {
+			return false;
+		}
+		
+		return (n1.data == n2.data) && isIdentical(n1.left, n2.left) && isIdentical(n1.right, n2.right);
+	}
 
 	public static void main(String[] args) {
 
+	}
+	
+	public boolean isIdenticalBfs(Node n1, Node n2) {
+		if(n1 == null && n2 == null)
+			return true;
+		
+		if(n1 == null || n2 == null)
+			return false;
+		
+		List<Node> q1 = new ArrayList<>();
+		List<Node> q2 = new ArrayList<>();
+		
+		q1.add(n1);
+		q2.add(n2);
+		
+		while(!q1.isEmpty() && !q2.isEmpty()) {
+			Node t1 = q1.get(0);
+			Node t2 = q2.get(0);
+			
+			if(t1.data != t2.data)
+				return false;
+			
+			if(t1.left != null && t2.left != null) {
+				q1.add(t1.left);
+				q2.add(t2.left);
+			} else if(t1.left != null || t2.left != null) {
+				return false;
+			}
+			
+			if(t1.right != null && t2.right != null) {
+				q1.add(t1.right);
+				q2.add(t2.right);
+			} else if(t1.right != null || t2.right != null) {
+				return false;
+			}
+		}
+		
+		return q1.isEmpty() && q2.isEmpty();
+		
 	}
 	
 	class Node {

@@ -5,7 +5,7 @@ public class Naive {
 		for(int i = 0; i <= text.length - pattern.length; i++) {
 			int j;
 			for(j=0 ; j < pattern.length; j++) {
-				if(text[i+j] == pattern[j])
+				if(text[i+j] != pattern[j])
 					break;
 			}
 			
