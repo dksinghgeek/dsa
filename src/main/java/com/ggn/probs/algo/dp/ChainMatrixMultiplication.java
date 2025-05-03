@@ -1,7 +1,5 @@
 package com.ggn.probs.algo.dp;
 
-import java.util.Arrays;
-
 public class ChainMatrixMultiplication {
 	
 	public void ChainMatrixMultiplicationAlgo(int[] p, int n) {
