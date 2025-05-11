@@ -1,4 +1,4 @@
-package com.ggn.probs.algo.slidingwindow;
+package com.ggn.probs.algo.fixedsize.slidingwindow;
 
 public class MaxSumAllSubArraysOfSizeK {
 
