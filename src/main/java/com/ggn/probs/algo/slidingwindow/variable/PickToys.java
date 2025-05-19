@@ -1,4 +1,4 @@
-package com.ggn.probs.algo.variablesize.slidingwindow;
+package com.ggn.probs.algo.slidingwindow.variable;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.ggn.probs.algo.variablesize.slidingwindow;
+package com.ggn.probs.algo.slidingwindow.variable;
 
 public class LargestSubArrayOfSumK {
 
