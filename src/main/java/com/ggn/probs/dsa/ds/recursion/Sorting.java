@@ -1,7 +1,6 @@
 package com.ggn.probs.dsa.ds.recursion;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Sorting {
