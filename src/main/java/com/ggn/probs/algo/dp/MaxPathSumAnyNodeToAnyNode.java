@@ -1,10 +1,10 @@
 package com.ggn.probs.algo.dp;
 
-public class MaxPathSum {
+public class MaxPathSumAnyNodeToAnyNode {
 	int max = Integer.MIN_VALUE;
 	
 	public static void main(String[] args) {
-		MaxPathSum op = new MaxPathSum();
+		MaxPathSumAnyNodeToAnyNode op = new MaxPathSumAnyNodeToAnyNode();
 		
 	    // Constructed binary tree is
         //          5
@@ -27,6 +27,7 @@ public class MaxPathSum {
 	private int solve(Node node) {
 		if (node == null)
 			return 0;
+		
 		int l = solve(node.left);
 		int r = solve(node.right);
 
