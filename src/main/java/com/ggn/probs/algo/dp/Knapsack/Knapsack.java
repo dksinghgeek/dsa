@@ -1,4 +1,4 @@
-package com.ggn.probs.algo.dp;
+package com.ggn.probs.algo.dp.Knapsack;
 
 
 //o-1
