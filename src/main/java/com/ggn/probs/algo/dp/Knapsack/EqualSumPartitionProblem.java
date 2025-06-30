@@ -1,11 +1,11 @@
 package com.ggn.probs.algo.dp.Knapsack;
 
-public class SubsetSumProblem {
+public class EqualSumPartitionProblem {
 
 	public static void main(String[] args) {
-		SubsetSumProblem op = new SubsetSumProblem();
+		EqualSumPartitionProblem op = new EqualSumPartitionProblem();
 
-		int[] arr = { 2, 3, 7, 8, 10 };
+		int[] arr = { 1, 5, 11, 5 };
 		int sum = 11;
 
 		System.out.println(op.solve(arr, sum));
@@ -13,6 +13,13 @@ public class SubsetSumProblem {
 
 	private boolean solve(int[] arr, int sum) {
 		boolean[][] t = new boolean[arr.length + 1][sum + 1];
+
+		int agg = 0;
+		for (int i = 0; i < arr.length; i++) {
+			agg += arr[i];
+		}
+
+		int W = agg / 2;
 
 		for (int i = 0; i < arr.length + 1; i++) {
 			for (int j = 0; j < sum + 1; j++) {
