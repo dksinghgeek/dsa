@@ -1,4 +1,4 @@
-package com.ggn.probs.algo.fixedsize.slidingwindow;
+package com.ggn.probs.algo.slidingwindow.fixed;
 
 import java.util.HashMap;
 import java.util.Map;
