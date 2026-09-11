@@ -15,7 +15,7 @@ public class KnapsackMemoization {
 			return M[n][W];
 		} else {
 			M[n][W] = solve(w, v, W, n - 1);
-			return solve(w, v, W, n - 1);
+			return M[n][W];
 		}
 	}
 
@@ -43,7 +43,7 @@ public class KnapsackMemoization {
 
 		System.out.println(op.solve(w, v, W, 4));
 
-		op.print();
+		//op.print();
 	}
 
 }

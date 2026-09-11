@@ -28,7 +28,7 @@ public class LongestCommonSubstring {
 			}
 		}
 
-		return lcs;
+		return t[m][n];
 	}
 
 	public static void main(String[] args) {

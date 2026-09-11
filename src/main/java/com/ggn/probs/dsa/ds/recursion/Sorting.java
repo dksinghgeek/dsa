@@ -35,11 +35,11 @@ public class Sorting {
 	public static void main(String[] args) {
 		Sorting op = new Sorting();
 
-		List<Integer> A = new ArrayList<>(List.of(2, 7, 1, 4, 11, 3, 5));
-
-		A = op.sort(A, A.size());
-
-		A.forEach(a -> System.out.print(" " + a.intValue()));
+//		List<Integer> A = new ArrayList<>(List.of(2, 7, 1, 4, 11, 3, 5));
+//
+//		A = op.sort(A, A.size());
+//
+//		A.forEach(a -> System.out.print(" " + a.intValue()));
 	}
 
 }
